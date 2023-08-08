@@ -1,0 +1,232 @@
+{% extends "base1.html" %}
+{% block content %}
+  <style>
+    body{
+      animation: fadeInAnimation ease 1.5s;
+	    animation-iteration-count: 1;
+	    animation-fill-mode: forwards;
+      background-color: #423d52;
+      color: #e9e0ab;
+    }
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+    .fade-in-text {
+  font-family: Arial;
+  animation: fadeIn 1.8s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+#main{
+    display: flex;
+    float: left;
+    width: 100%;
+
+    flex-direction: row;
+   
+}
+#para{
+    max-height: 420px;
+    max-width: 100%;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+#im{
+    height: 480px;
+    display: flex;
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    
+}
+#image{
+    margin-left: 440px;
+    right: 30;
+    margin-right: 5%;
+    /* position: fixed; */
+}
+#pa{
+    display: none;
+}
+#btn{
+    display: none;
+}
+@media only screen and (max-width: 1480px) {
+
+    #main{
+    display: flex;
+    flex-direction: column;
+   
+    
+   
+}
+#im{
+    
+    margin-right: 0;
+    width:100%;
+    
+    
+}
+    #para   
+    {
+        height: 720px;
+        width: 100%;
+        text-align: left;
+        margin-left: 1%;
+        margin-top: 5%;
+        overflow:scroll;
+        /* margin-bottom: 16%; */
+
+    }
+
+   
+#image{
+    margin-left: 45px;
+    margin-right: 20px;
+    /* margin-top: 80px; */
+    /* position: fixed; */
+}
+#pa{
+    display: none;
+}
+#btn{
+    display: block;
+}
+/* #foot{
+    display: none;
+} */
+}
+@media only screen and (max-width: 1480px) and (min-width: 720px){
+    #pa{
+        display: block;
+        /* font-size: 1.3em; */
+    }
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #eedf8a;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #e9eae3;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+  </style>
+  
+    
+    <div id="main">
+        <!-- <div class="fade-in-text"> -->
+    <div id="para">
+        <h1 style="text-align: center;">
+            Welcome
+          </h1>
+          <br>
+      <p style="font-size: 1.4em;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis magni ipsa nostrum quia tempore nesciunt sunt dolores perferendis corporis, atque sed, dignissimos praesentium ratione! At blanditiis architecto, quia optio ullam animi odit omnis dicta veniam, assumenda maiores cum repellendus et minus provident quam? Nam cum nihil earum saepe, quam aspernatur voluptatibus. Perferendis aliquid molestiae distinctio cupiditate asperiores vel nihil adipisci sunt iste, quod nam? Ex non repudiandae, et ad aliquam quam magni nostrum velit tempore, illo maxime, temporibus adipisci vel reprehenderit pariatur aspernatur architecto! Dolores, voluptatibus ad id ea voluptates accusamus non incidunt. Ullam aliquid soluta dicta perferendis repellendus praesentium?</p>
+          
+    </div>
+<!-- </div> -->
+    <div id="im">
+        <img id="image" src="static/myapp/WhatsApp Image 2023-03-27 at 12.22.17 PM.jpeg" height="420px" alt="img" >
+        <div id="pa">
+            <h3 style="text-align: center;" >About Courses</h3>
+             <p id="aboutc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nam maxime qui labore quisquam earum tenetur, sed quo ex. Alias accusamus repudiandae facere dolores cumque ex earum ut iste? Totam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vel perspiciatis quos, dolorum unde neque sunt animi pariatur tempora quod.</p>
+                <button onclick="more()" id="btn">View More</button>
+            </div>
+
+        </div>
+</div>
+<a href="course">
+<button style="display: flex; float: right; margin-right: 10%; ">
+    <span>View Courses</span>
+    <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+        <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+    </svg>
+</button>
+</a>
+
+</div>
+<div id="foot" style="margin-top: 40%;">
+  <h2 style="text-align: center;">
+    About Courses
+  </h2>
+  <hr>
+  <h4 style="margin-left: 3%;">Physics</h4>
+  <div id="course" style="display: flex; justify-content: left;">
+  <p style="text-align: right  ; float: right;  height: 280px; width: 570px; " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae.</p>
+  <img style="margin-left: 15%;" src="static/myapp/1077114.png" height="80px" >
+</div>
+<br>
+<br>
+<h4 style="text-align: center;">Chemistry</h4>
+
+<div id="course" style="display: flex; justify-content: right;">
+<p style="text-align: right  ; float: right;  height: 280px; width: 570px; " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae.</p>
+<img style="margin-left: 15%;" src="static/myapp/1077114.png" height="80px" >
+</div>
+<br>
+<br>
+<h4 style="margin-left: 3%;" >Mathematics</h4>
+  <div id="course" style="display: flex; justify-content: left;">
+  <p style="text-align: right  ; float: right;  height: 280px; width: 570px; " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae.</p>
+  <img style="margin-left: 15%;" src="static/myapp/1077114.png" height="80px" >
+</div>
+</div>
+
+<div id="cont">
+    <br>
+    <br>
+    <h2 style="text-align: center;">
+
+      Contact us
+    </h2>
+    <hr>
+    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae.</p>
+  </div>
+  <script>
+    more=()=>{
+      const para=document.getElementById('btn')
+      para.remove()
+      paracc=document.getElementById('aboutc')
+      paracc.innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestias saepe sed officiis incidunt dignissimos nesciunt expedita quidem natus dolore voluptas, ratione, exercitationem magni. Ratione accusamus ea nam nihil inventore esse sequi soluta commodi minima facere officia, ipsa praesentium ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, recusandae"
+
+    }
+  </script>
+{% endblock content %}
+
+

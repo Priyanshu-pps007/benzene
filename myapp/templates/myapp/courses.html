@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block flag %}
+{% if count %}
+{{count}}
+{% else %}
+0
+{% endif %}
+{% endblock flag %}
+
+{% block content %}
+<style>
+  body{
+    background-color: #423d52;
+      color: #e9e0ab;
+      animation: fadeInAnimation ease 1.5s;
+	    animation-iteration-count: 1;
+	    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.btnselect:hover{
+  background-color: #423d52 !important;
+  color:#e9e0ab
+}
+.dropdown-menu:hover{
+  background-color: #423d52;
+}
+</style>
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin-left: 3%; margin-top: 1.5%; justify-content: center; align-items: center; "  >
+  <div class="col">
+    <div class="card h-100" style="width:320px;">
+      <img src="static/myapp/chemistry.jpg" class="card-img-top" alt="..." height="400px">
+      <div class="card-body" style="background-color: #423d52; color:#e9e0ab ">
+        <h5 class="card-title">Chemistry</h5>
+        <p class="card-text">Top-rated chemistry course for class 11th & 12th with comprehensive modules. Purchase now for excellence!</p>
+      </div>
+      <div class="card-footer" style="background-color: #423d52; color:#e9e0ab ">
+      <a href="learning">  <button style="background-color: #e9e0ab; padding: 5px; border-radius: 10px; ">Demo</button></a>
+          <div class="dropdown" style="display: flexbox; float: right; background-color:#423d52 ">
+            <button style="background-color: #e9e0ab; color: black; " class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Courses
+          </button>
+          <ul class="dropdown-menu" style="background-color: #e9e0ab;">
+            
+            <li>
+              <input name="subj" type="text" hidden value="chemsistry">
+              <input id="cls" name="myclass" value="class XI" type="text" hidden>
+             <a href="eleventh"> <button id="chemele" class="btnselect" style="width: 100%; background-color: #e9e0ab ;border: 0;  ">
+                Class XI
+              </button>
+            </a>
+              
+          
+            </li>
+            
+              {% csrf_token %}
+              <input name="subj1" type="text" hidden value="chemistry">
+              <input  name="myclass1" value="class XII" type="text" hidden>
+            <li>
+            <a href="twelveth">  <button id="chemtwe" type="submit" class="btnselect" style="width: 100%; background-color: #e9e0ab ;border: 0;  ">Class XII</button> </a></li>
+            
+            
+            <li><a class="dropdown-item" href="#" hidden>Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col" style="margin-top: 3%;">
+      <div class="card h-100" style="width:350px">
+        <img src="static/myapp/chem.jpg" class="card-img-top" alt="..." height="400px">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div> -->
+    
+    <!-- <div class="col">
+      <div class="card h-100" style="width: 350px;">
+        <img src="static/myapp/chem.jpg" class="card-img-top" alt="..." height="400px">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div> -->
+    
+  
+
+
+  
+  
+  
+{% endblock content %}

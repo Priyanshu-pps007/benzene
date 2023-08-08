@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block flag %}
+{% if count %}
+{{count}}
+{% else %}
+0
+{% endif %}
+{% endblock flag %}
+{% block content %}
+<body>
+    <style>
+        body{
+    background-color: #423d52;
+      color: #e9e0ab !important;
+}
+        #head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 300px;
+        }
+    </style>
+  <h1 id="head">Oops! Your cart is empty :(</h1>
+</body>
+{% endblock content %}

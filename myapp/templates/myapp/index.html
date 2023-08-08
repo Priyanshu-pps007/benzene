@@ -1,0 +1,546 @@
+{% extends "base.html" %}
+{% block flag %}
+{% if count %}
+{{count}}
+{% else %}
+0
+{% endif %}
+{% endblock flag %}
+{% block content %}
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-footer {
+  padding: 70px 0;
+  display: flex;
+  justify-content: space-evenly;
+  opacity: 0.5;
+  background-color: #4b4757;
+}
+
+.main-footer ul {
+  list-style: none;
+}
+
+.main-footer h1 {
+  font-size: 22px;
+  line-height: 117%;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.main-footer h2 {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.main-footer ul li a {
+  color: #ffffffcc;
+  text-decoration:none;
+}
+
+footer {
+  background-color: #4c4a54;
+  border-top: 1px solid #4c524d;
+  font-size: 17px;
+  padding: 15px 5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logoinfo p {
+  color: #edf3ee;
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-details li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.contact-details li a {
+  text-decoration:none;
+  color: #f1f1f1;
+}
+
+.contact-details .fa {
+  color: #f1f1f1;
+  margin-right: 10px;
+}
+
+.sociallogos{
+  padding:20px 0;
+}
+
+.sociallogos .logobox a{
+  padding:0 10px;
+  text-decoration:none;
+  color:#ffffff;
+  font-size:22px;
+}
+
+.com ul li{
+  padding:5px 0;
+}
+
+@media only screen and (max-width: 749px) {
+  .main-footer {
+    padding:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+    .info{
+      padding:20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-footer {
+    grid-template-columns: 1fr;
+  }
+  .sociallogos{
+    padding:20px 0;
+  }
+  .com{
+    padding:20px 0;
+  } 
+
+}
+    body{
+      animation: fadeInAnimation ease 1.5s;
+	    animation-iteration-count: 1;
+	    animation-fill-mode: forwards;
+      background-color: #423d52;
+      color: #e9e0ab;
+    }
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+    .fade-in-text {
+  font-family: Arial;
+  animation: fadeIn 1.8s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#chem{
+  margin-top: 30px;
+}
+#maths{
+  margin-top: 30px;
+}
+h1{
+  font-family: monospace;
+  font-size: 3em;
+}
+
+#btn{
+    display: none;
+}
+@media only screen and (max-width: 720px) {
+  
+  #main{
+    display: flex;
+    /* float: left; */
+    /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;
+    /* row-gap: 80px; */
+   
+}
+#para{
+  margin: 0;
+    /* max-height: 920px; */
+    /* max-width: 100%; */
+    text-align: center;
+    /* margin-left: 555%; */
+    margin-top: 3%;
+    
+}
+#im{
+  /* margin: 0; */
+  height: 350px !important;
+  width: 300px !important;
+  display: flex;
+  /* float: right; */
+  justify-content: center;
+  align-items: center;
+    /* margin-left: 80px; */
+    /* margin-top: 15%; */
+    
+}
+
+.title1{
+  font-size: 2em;
+}
+
+#image{
+  /* margin-left: 440px;
+  right: 30;
+  margin-right: 5%; */
+  height: 220px !important;
+  width: 310px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  /* margin-right: 5%; */
+  /* margin-top: 15%; */
+  
+  /* position: fixed; */
+}
+#pa{
+  display: none;
+}
+}
+
+@media only screen and (min-width: 1480px) {
+
+  #main{
+    display: flex;
+    /* float: left; */
+    /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+    flex-direction: row;
+    /* row-gap: 80px; */
+   
+}
+#para{
+  margin: 0;
+    max-height: 920px;
+    max-width: 100%;
+    /* text-align: left; */
+    margin-left: 5%;
+    margin-top: 3%;
+    
+}
+#im{
+  /* margin: 0; */
+  height: 220px !important;
+  /* width: 20px !important; */
+  display: flex;
+  /* float: right; */
+  margin-right: 5%;
+    margin-left: 80px;
+    /* margin-top: 15%; */
+    
+}
+
+#image{
+  /* margin-left: 440px;
+  right: 30;
+  margin-right: 5%; */
+  height: 320px !important;
+  width: 520px !important;
+  display: flex;
+  /* float: right; */
+  /* margin-right: 5%; */
+  /* margin-top: 15%; */
+  
+  /* position: fixed; */
+}
+
+/* #chem{
+  margin-top: 0;
+}
+#maths{
+  margin-top: 0;
+} */
+
+    
+
+   
+
+#pa{
+    display: none;
+}
+#btn{
+    display: block;
+}
+/* #foot{
+    display: none;
+} */
+}
+@media only screen and (max-width: 1480px) and (min-width: 700px){
+  #im{
+    display: flex;
+    flex-direction: row;
+  }
+    #pa{
+        display: block;
+        margin-left: 20px;
+        /* font-size: 1.3em; */
+    }
+    #btn{
+      display: block;
+    }
+   
+    #para{
+      text-align: center;
+      font-size: 1.3em;
+    }
+    .info{
+      font-size: 1.3em; 
+      margin-top: 100px;
+    }
+    
+    
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #eedf8a;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #e9eae3;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+@media(min-width:1325px){
+  #chem{
+    margin-bottom: 20px;
+  }
+  .info{
+      font-size: 1.3em; 
+      margin-top: 80px;
+      margin-left: 50px;
+    }
+    #info2{
+      margin-right: 200px;
+    }
+    #img2{
+      margin-right: 50px;
+    }
+}
+@media(max-width:900px){
+  #imgg{
+    justify-content: center;
+    align-items: center;
+      height: 360px;
+      width: 370px;
+      margin: 0 !important;
+      padding: 30px !important;
+      /* margin-top: 50px !important; */
+    }
+
+    .info{
+      font-size: 1em;
+    
+    }
+    #img2{
+      align-items: center;
+      height: 360px;
+      width: 380px;
+      margin: 0 !important;
+      padding: 30px !important;
+
+    }
+    #course2{
+      display: flex;
+      flex-direction: column;
+      column-gap: 20px !important;
+      height: 600px !important;
+      margin-bottom: 100px !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    #course1{
+      display: flex;
+      flex-direction: column;
+      column-gap: 20px !important;
+      justify-content: center !important;
+      align-items: center !important;
+      
+    }
+    #info1{
+      margin-top: 0 !important;
+      width: 350px !important;
+      height: 250px !important;
+    }
+    #info2{
+      
+      width: 350px !important;
+      height: 150px !important;
+      
+    }
+}
+
+  </style>
+  
+  <h1 class="title1" style="text-align: center; margin-top: 20px;">
+    Benzene Institute
+  </h1>
+  <h5 style="text-align: center;">
+    Promise to learn better
+  </h5>
+    <div id="main">
+        <!-- <div class="fade-in-text"> -->
+          
+    <div id="para">
+        
+          <br>
+      <p style="font-size: 1.4em;">Looking for the best institute to excel in your studies for class 11, 12, JEE Mains, Advance, CUET, and other exams? Look no further than Benzene Institute! With an outstanding reputation for academic excellence, Benzene Institute is your ultimate destination for quality education. Led by the esteemed faculty, Vinay Singh, the institute promises a superior learning experience to help you reach your academic goals.At Benzene Institute, we focus on empowering students with a comprehensive curriculum, interactive teaching methods, and personalized attention to ensure each student's success. Our dedication to nurturing young minds and shaping their future has made us the go-to coaching center for JEE and other competitive exams.Join us at Benzene Institute and embark on a journey of knowledge and success with our motto "Promise to learn better." Let your dreams take flight with our expert guidance and top-notch facilities. Choose the best to be the best!</p>
+          
+    </div>
+<!-- </div> -->
+    <div id="im">
+        <img id="image" src="static/myapp/1.jpg" height="220px" width="320px" alt="img" >
+        <div id="pa">
+            <h3 style="text-align: center;" >About Courses</h3>
+             <p id="aboutc"> This course is the best investment you can make! Packed with comprehensive content, expert guidance, and interactive learning, it's tailor-made for success. Gain invaluable knowledge and skills for class 11, 12, JEE Main, CUET, and all competitive exams. Unlock your potential with this outstanding course!
+
+
+
+
+             </p>
+                <button onclick="more()" id="btn">View More</button>
+            </div>
+
+        </div>
+</div>
+<a href="course">
+<button style="display: flex; float: right; margin-right: 10%; ">
+    <span>View Course</span>
+    <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+        <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+    </svg>
+</button>
+</a>
+
+</div>
+<div id="foot" style="margin-top: 5%;">
+  <h2 style="text-align: center;">
+    About Courses
+  </h2>
+  <hr>
+  <h4 id="physics" style="margin-left: 3%; text-align: center;">Notes</h4>
+  <div id="course1" style="display: flex; justify-content: left;">
+    <img id="imgg" style="margin-left: 15%;" src="static/myapp/note.png" height="350px" >
+  <p class="info" id="info1" style="text-align: right  ; float: right;  height: 280px; width: 570px;  " >Faculty-provided handwritten notes are invaluable for students preparing for class 11, 12, JEE Main, CUET, and all competitive exams. These notes condense essential information, simplify complex topics, and serve as a comprehensive study resource. Embrace the power of meticulously crafted notes to excel in your academic journey</p>
+  
+</div>
+<br>
+<br>
+<h4 id="chem" style="text-align: center;">Video Lectures</h4>
+
+<div id="course2" style="display: flex; justify-content: right;">
+  <img id="img2" style="margin-left: 15%;" src="static/myapp/lecture.jpg" height="350px" >
+<p class="info" id="info2" style="text-align: right  ; float: right;  height: 280px; width: 570px; " >The faculty's video lectures are immensely beneficial for class 11, 12, JEE Main, CUET, and all competitive exams. These highly informative videos offer a clear understanding of complex concepts, making learning easier and more engaging. Embrace the convenience of video lectures for a successful academic journey.</p>
+
+</div>
+<br>
+<br>
+
+</div>
+
+<section id="footer">
+  <div class="main-footer">
+    <div class="logoinfo" data-aos="fade-up">
+      <h2>Benzene Institute</h2>
+      <h3 style="color: #e9eae3;">By Vinay Singh</h3>
+      
+
+      <div class="contact-details">
+        <h1>Contact Us</h1>
+        <li>
+          <div class="fa fa-phone"></div><a href="tel:+919326048690"> 📞 +91 7237075154</a></li>
+        <li>
+          <div class="fa fa-envelope"></div><a href="#"> ✉️ benzeneinstitute@gmail.com</a></li>
+          <div class="fa fa-envelope"></div></> Developed by-  </></li>
+          <div class="fa fa-envelope" style="font-family: monospace !important;"></div>Priyanshu Pratap Singh and Abhinandan Singh</li>
+        </li>
+    </div>
+  </div>
+  <div class="com " data-aos="fade-up">
+    <br>
+    <h1>M.Sc/B.Ed</h1>
+    <ul>
+      <li><a href="#">Specialization in organic chemistry</a></li>
+      <li><a href="#">5+ years of teaching experience</a></li>
+      <!-- <li><a href="#">Jhalwa</a></li>
+      <li><a href="#">Prayagraj</a></li> -->
+    </ul>
+    <h1>Address</h1>
+    <ul>
+     
+      <li><a href="#">Jhalwa</a></li>
+      <li><a href="#">Prayagraj</a></li>
+    </ul>
+  </div>
+  <div class="info" data-aos="fade-up">
+    
+    </div>
+  </div>
+  </div>
+<!-- <footer>Developed by Priyanshu and Abhinandan Singh</footer> -->
+</section>
+  <script>
+    more=()=>{
+      const para=document.getElementById('btn')
+      para.remove()
+      paracc=document.getElementById('aboutc')
+      paracc.innerHTML="This course is the best investment you can make! Packed with comprehensive content, expert guidance, and interactive learning, it's tailor-made for success. Unlock your potential with this outstanding course! This course is worth every penny! It ensures effortless learning and in-depth knowledge of every topic, making complex concepts easy to grasp. With user-friendly study materials and expert guidance, it guarantees a seamless learning experience for class 11, 12, JEE Main, CUET, and competitive exams. Don't miss out on this valuable opportunity!"
+
+    }
+  </script>
+{% endblock content %}
+
+

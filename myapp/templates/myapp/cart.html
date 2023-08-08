@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block flag %}
+{% if count %}
+{{count}}
+{% else %}
+0
+{% endif %}
+{% endblock flag %}
+{% block content %}
+  <style>
+    body{
+    background-color: #423d52;
+      color: #e9e0ab;
+      animation: fadeInAnimation ease 1.5s;
+	    animation-iteration-count: 1;
+	    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.card{
+  background-color: #444050 !important;
+  opacity: 0.8;
+      color: #e9e0ab !important;
+}
+.btn.btn-primary{
+  background-color: #504b5f !important;
+  color: #e9e0ab;
+}
+  </style>
+
+{% if userr %}
+<input id="myval" type="number" hidden value="{{u.counter}}">
+<div class="card">
+  <div class="row no-gutters">
+      <div class="col-auto"  >
+          <!-- <img src="static/myapp/chemistry.jpg" height="100px !important" width="100px" class="img-fluid" alt=""> -->
+      </div>
+      <div class="col">
+          <div class="card-block px-2"  >
+              <h4 class="card-title">Items {{userr}}</h4>
+              <p class="card-text">You had added total {{userr}} items in your cart. Click on pay button to proceed</p>
+              
+              <button   style="float: right;" onclick="func()" id="rzp-button1" class="btn btn-primary">Pay</button>
+            
+
+          </div>
+      </div>
+  </div>
+</div>
+{% endif %}
+{% if el %}
+{% for e in el %}
+<div class="card">
+  <div class="row no-gutters">
+      <div class="col-auto"  >
+          <img src="static/myapp/chemistry.jpg" height="100px !important" width="100px" class="img-fluid" alt="">
+      </div>
+      <div class="col">
+          <div class="card-block px-2"  >
+              <h4 class="card-title">{{e.chapter_name}}</h4>
+              <p class="card-text">Class XI<br>Unlock the best course on {{e.chapter_name}}: handwritten notes and video lectures await, ensuring an enriching and comprehensive learning experience. Don't miss out! </p>
+              <form method="post" action="remove">
+                {% csrf_token %}
+                <input type="hidden" value="{{e.chapter_name}}" name="chapter"/>
+              <button type="submit" style="float: right;" id="chem1" class="btn btn-primary">REMOVE</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% for t in tw %}
+<div class="card">
+  <div class="row no-gutters">
+      <div class="col-auto"  >
+          <img src="static/myapp/chemistry.jpg" height="100px !important" width="100px" class="img-fluid" alt="">
+      </div>
+      <div class="col">
+          <div class="card-block px-2"  >
+              <h4 class="card-title">{{t.chapter_name}}</h4>
+              <p class="card-text">Class XII<br>Unlock the best course on {{t.chapter_name}}: handwritten notes and video lectures await, ensuring an enriching and comprehensive learning experience. Don't miss out!</p>
+
+              
+              <form method="post" action="remove">
+                {% csrf_token %}
+                <input type="hidden" value="{{t.chapter_name}}" name="chapter"/>
+              <button type="submit" style="float: right;" id="chem1" class="btn btn-primary">REMOVE</button>
+            </form>
+          </div>
+
+      </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+<script>
+//   am=document.getElementById('myval').value
+//   amm=5000*am
+//   conv=amm.toString()
+//   var options = {
+//       "key": "rzp_test_CUCNWEytRu04a5", // Enter the Key ID generated from the Dashboard
+//       "amount": conv, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//       "currency": "INR",
+//       "name": "Benzene Institute", //your business name
+//       "description": "Test Transaction",
+//       "image": "https://thumbs.dreamstime.com/b/atom-icon-grey-background-atom-icon-grey-background-vector-illustration-175792922.jpg",
+//     "order_id": "{{payment}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//     "callback_url": "http://192.168.1.9:8000/verifypay",
+//     "theme": {
+//         "color": "#3399cc"
+//     }
+// };
+
+// var rzp1 = new Razorpay(options);
+
+// document.getElementById('rzp-button1').onclick = function(e){
+    
+//     setTimeout(()=>{
+    
+//         rzp1.open();
+//     },3000)
+//     e.preventDefault();
+// }
+
+func=()=>{
+  alert("payment will be available soon !")
+}
+</script>
+
+
+{% endblock content %}
